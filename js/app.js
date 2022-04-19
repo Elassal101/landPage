@@ -39,14 +39,14 @@ window.addEventListener("scroll", () => {
 
 function eventClick () {
     const links = document.querySelectorAll(".scroll-from");
-    links.forEach(function (evet) {
+    for (const evet of links) {
         evet.addEventListener("click", function (e) {
             e.preventDefault();
             const selectedSection = document.getElementById(evet.getAttribute("href").substring(1));
             selectedSection.scrollIntoView({behavior: "smooth", block: "start"});
-    });
-});
-}
+        });
+    }
+};
 eventClick();
 
 const scroll = document.querySelector(".scroll-top");
